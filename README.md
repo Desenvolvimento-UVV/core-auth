@@ -38,7 +38,7 @@ API backend desenvolvida para autenticação, controle de acesso e gerenciamento
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/0x36E9/Services-main-api.git
+   git clone https://github.com/Desenvolvimento-UVV/core-auth
    cd Services-main-api
 
 2. Instale as dependências:
