@@ -1,0 +1,16 @@
+{
+  "name": "migrate",
+  "module": "index.ts",
+  "type": "module",
+  "author": "isnthxd"
+  "devDependencies": {
+    "@types/bun": "latest",
+    "prisma": "^5.17.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.17.0"
+  }
+}

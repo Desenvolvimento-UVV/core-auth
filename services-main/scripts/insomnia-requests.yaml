@@ -1,0 +1,210 @@
+_type: export
+__export_format: 4
+__export_date: 2024-07-16T07:34:02.683Z
+__export_source: insomnia.desktop.app:v9.3.2
+resources:
+  - _id: req_d0b5a4faa1b847259f5a3bb894459745
+    parentId: fld_b9f104bf2e54417dbca2c30cfb053594
+    modified: 1721115218635
+    created: 1721019322099
+    url: http://localhost:8000/app/status
+    name: status
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"unique": "your_unique"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: Services/1.0.0 (24aeeb2b43db)
+        id: pair_1d6c68addb6f4f86a327b37b1dc3167a
+      - id: pair_618eceee1c2d4fe784253c9c8c6fd7e0
+        name: X-Api-Key
+        value: e278017841df
+        description: ""
+        disabled: false
+    authentication: {}
+    metaSortKey: -1721019337080
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_b9f104bf2e54417dbca2c30cfb053594
+    parentId: wrk_13917dd5461e4d5b810a842a995427b9
+    modified: 1721019311832
+    created: 1721019311832
+    name: app
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1721019311832
+    _type: request_group
+  - _id: wrk_13917dd5461e4d5b810a842a995427b9
+    parentId: null
+    modified: 1721015821217
+    created: 1721015821217
+    name: services
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_cea8a4aa68d941d98148a82c91fa85ed
+    parentId: fld_c72a0e0d14aa48f28191320072ac3aab
+    modified: 1721115181388
+    created: 1721015831922
+    url: http://localhost:8000/user/create
+    name: create
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"username": "test",
+        	"password": "@Test123",
+        	"productKey": "testkey",
+        	"hardware": {
+        		"cpu": "your_cpu",
+        		"gpu": "your_gpu",
+        		"ram": "your_ram",
+        		"unique": "your_unique"
+        	}
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: Services/1.0.0 (24aeeb2b43db)
+        id: pair_1d6c68addb6f4f86a327b37b1dc3167a
+      - id: pair_618eceee1c2d4fe784253c9c8c6fd7e0
+        name: X-Api-Key
+        value: e278017841df
+        description: ""
+        disabled: false
+    authentication: {}
+    metaSortKey: -1721015902356
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_c72a0e0d14aa48f28191320072ac3aab
+    parentId: wrk_13917dd5461e4d5b810a842a995427b9
+    modified: 1721015892989
+    created: 1721015892989
+    name: user
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1721015892989
+    _type: request_group
+  - _id: req_8abd121c55ae4337990f46420a69a48d
+    parentId: fld_c72a0e0d14aa48f28191320072ac3aab
+    modified: 1721115191257
+    created: 1721017500700
+    url: http://localhost:8000/user/login
+    name: login
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"username": "test",
+        	"password": "@Test123",
+        	"hardware": {
+        		"cpu": "your_cpu",
+        		"gpu": "your_gpu",
+        		"ram": "your_ram",
+        		"unique": "your_unique"
+        	}
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: Services/1.0.0 (24aeeb2b43db)
+        id: pair_1d6c68addb6f4f86a327b37b1dc3167a
+      - id: pair_618eceee1c2d4fe784253c9c8c6fd7e0
+        name: X-Api-Key
+        value: e278017841df
+        description: ""
+        disabled: false
+    authentication: {}
+    metaSortKey: -1720814915506
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_2eb4e71504044b87be5414d7f942ea08
+    parentId: fld_c72a0e0d14aa48f28191320072ac3aab
+    modified: 1721017561048
+    created: 1721017525767
+    url: http://localhost:8000/user/me
+    name: me
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: Services/1.0.0 (24aeeb2b43db)
+        id: pair_1d6c68addb6f4f86a327b37b1dc3167a
+      - id: pair_618eceee1c2d4fe784253c9c8c6fd7e0
+        name: X-Api-Key
+        value: e278017841df
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: "{% response 'body', 'req_8abd121c55ae4337990f46420a69a48d',
+        'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+    metaSortKey: -1720714422081
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_f0d80a5083cdec3b127c78307ba6ce809c4f66be
+    parentId: wrk_13917dd5461e4d5b810a842a995427b9
+    modified: 1721015821219
+    created: 1721015821219
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1721015821219
+    _type: environment
+  - _id: jar_f0d80a5083cdec3b127c78307ba6ce809c4f66be
+    parentId: wrk_13917dd5461e4d5b810a842a995427b9
+    modified: 1721015821220
+    created: 1721015821220
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar

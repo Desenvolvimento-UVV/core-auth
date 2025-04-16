@@ -1,0 +1,105 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Users {
+  id            Int             @id @default(autoincrement())
+  username      String          @unique
+  password      String
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+  ban           Bans?
+  identifier    Identifiers?
+  subscriptions Subscriptions[]
+
+  @@map("users")
+}
+
+model Identifiers {
+  id        Int      @id @default(autoincrement())
+  userId    Int      @unique
+  cpu       String
+  gpu       String
+  ram       String
+  location  String
+  unique    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  User      Users    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("identifiers")
+}
+
+model Bans {
+  id        Int      @id @default(autoincrement())
+  userId    Int      @unique
+  banned    Boolean  @default(false)
+  reason    String   @default("not set")
+  updatedAt DateTime @updatedAt
+  User      Users    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("bans")
+}
+
+model Subscriptions {
+  id          Int      @id @default(autoincrement())
+  userId      Int
+  productId   Int
+  expireTime  BigInt
+  productKeys String[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  User        Users    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("subscriptions")
+}
+
+model Products {
+  id          Int       @id @default(autoincrement())
+  image       String
+  name        String    @unique
+  downloadUrl String
+  version     String
+  status      String
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  strings     Strings[]
+
+  @@map("products")
+}
+
+model Strings {
+  id        Int      @id @default(autoincrement())
+  productId Int
+  name      String
+  data      String[]
+  Product   Products @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@map("strings")
+}
+
+model Keys {
+  id          Int      @id @default(autoincrement())
+  ownerId     String
+  productKey  String   @unique
+  productId   Int
+  productTime Int
+  createdAt   DateTime @default(now())
+
+  @@map("keys")
+}
+
+model Blacklists {
+  id          Int      @id @default(autoincrement())
+  unique      String   @unique
+  description String
+  level       String   @default("suspicious")
+  createdAt   DateTime @default(now())
+
+  @@map("blacklists")
+}

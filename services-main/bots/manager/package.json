@@ -1,0 +1,25 @@
+{
+  "name": "manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "nodemon src/main.ts",
+    "deploy:commands": "tsc && node dist/client/deploy-commands.js"
+  },
+  "author": "hxd",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "5.12.1",
+    "argon2": "^0.40.1",
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0",
+    "prisma": "^5.12.1",
+    "sucrase": "^3.35.0",
+    "typescript": "^5.4.4"
+  }
+}
